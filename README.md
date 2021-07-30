@@ -1,15 +1,18 @@
 # dbpath
 
-A new flutter plugin project.
+get database path getDataBasePath()
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+this package has only one function getDataBasePath() to get database path for android 
+as path_provider doesnt have it 
+for ios there is not database path you should use getApplicationDocumentsDirectory from path_provider 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+somethinge like this 
 
+dart'''
+Future<String> getDBPath() async => isAndroid
+    ? (await getDataBasePath())!
+    : (await getApplicationDocumentsDirectory()).path;
+
+'''

@@ -9,7 +9,7 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+      return 'path/db';
     });
   });
 
@@ -17,7 +17,7 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await Dbpath.platformVersion, '42');
+  test('getDataBasePath', () async {
+    expect(await getDataBasePath(), isNotNull  );
   });
 }
