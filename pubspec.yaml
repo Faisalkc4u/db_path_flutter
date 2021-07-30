@@ -1,8 +1,7 @@
 name: dbpath
-description: A new flutter plugin project.
+description: get database path
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/Ali1Ammar/db_path_flutter
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
