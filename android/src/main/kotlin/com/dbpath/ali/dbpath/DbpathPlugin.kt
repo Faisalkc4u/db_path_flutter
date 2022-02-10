@@ -9,6 +9,8 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import android.content.Context;
+import io.flutter.util.PathUtils;
+
 /** DbpathPlugin */
 class DbpathPlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
@@ -29,7 +31,7 @@ class DbpathPlugin: FlutterPlugin, MethodCallHandler {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else if (call.method == "getDataBasePath") {
-          result.success(applicationContext.getDatabasePath("aliammar125.sqlite").getParent());
+          result.success(PathUtils.getDataDirectory(applicationContext));
     } else {
       result.notImplemented()
     }
